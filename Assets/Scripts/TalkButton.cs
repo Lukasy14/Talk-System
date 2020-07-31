@@ -7,6 +7,11 @@ public class TalkButton : MonoBehaviour
     public GameObject Button;
     public GameObject talkUI;
 
+    void Awake()
+    {
+        talkUI.SetActive(false);
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         Button.SetActive(true);
@@ -21,7 +26,7 @@ public class TalkButton : MonoBehaviour
     {
         if (Button.activeSelf && Input.GetKeyDown(KeyCode.R))
         {
-            // talkUI.SetActive(true);
+            talkUI.SetActive(true);
         }
     }
 
